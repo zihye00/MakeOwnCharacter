@@ -12,8 +12,10 @@ using UnityEngine;
 
 public class Characters : MonoBehaviour
 {
-
-
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
     // - 바닥이 인식 되었을 때
     public void OnPlaneFound()
     {

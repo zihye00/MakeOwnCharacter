@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class Touch_1 : MonoBehaviour
 {
+
     // - 캐릭터1
     public GameObject character_2;
     // - 캐릭터2
