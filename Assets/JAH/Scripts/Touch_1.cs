@@ -6,23 +6,18 @@ using UnityEngine.SceneManagement;
 // 역할 1 : 캐릭터을 터치하면 나 자신만 활성화
 // - 나머지 캐릭터들 비활성화
 
-// 역할 2 : 2초 후 커스텀하는 Scene으로 전환
-// - 선택한 캐릭터의 정보가 넘어감
-
-// 역할 2 : 2초 후 Scene(커스텀하는)전환
 
 public class Touch_1 : MonoBehaviour
 {
     // - 캐릭터1
-    public GameObject character_1;
-    // - 캐릭터2
     public GameObject character_2;
-    // - 캐릭터3
+    // - 캐릭터2
     public GameObject character_3;
+    // - 캐릭터3
+    public GameObject character_4;
 
 
     // 역할 1 : Character_1(나 자신)을 터치하면 나 자신만 활성화
-    // - 캐릭터2,3 비활성화
     public void Touch()
     {
         // 터치하지 않으면 반응X
@@ -35,18 +30,13 @@ public class Touch_1 : MonoBehaviour
         if (touch.phase == TouchPhase.Began)
         {
             // if(캐릭터 1만 터치하면)
-            // - 캐릭터2,3 비활성화
-            character_2.gameObject.SetActive(false);
-            character_3.gameObject.SetActive(false);
+            // - 캐릭터2,3,4 비활성화
+            Destroy(character_2);
+            Destroy(character_3);
+            Destroy(character_4);
 
-            // 3초 후 커스텀하는 Scene으로 전환
-            StartCoroutine(CustomScene());
         }
     }
 
-    IEnumerator CustomScene()
-    {
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("CustomScene");
-    }
+ 
 }
