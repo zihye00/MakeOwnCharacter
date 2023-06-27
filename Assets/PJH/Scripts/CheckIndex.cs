@@ -9,6 +9,7 @@ public class CheckIndex : MonoBehaviour
 {
 
     // 인덱스 지정
+    // 특정 인덱스일때 특정 프리팹 생성
     // CaracterIndex 저장
     public void SetCharacterIdx(int idx)
     {
