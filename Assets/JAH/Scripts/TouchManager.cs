@@ -71,14 +71,14 @@ public class TouchManager : MonoBehaviour
 
                         //hitInfo.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                         //cam.transform.localEulerAngles = hitInfo.transform.localEulerAngles;
-                        particleActive();
+                        //particleActive();
 
                         // 나머지 캐릭터들 비활성화
                         characters[1].gameObject.SetActive(false);
                         characters[2].gameObject.SetActive(false);
                         characters[3].gameObject.SetActive(false);
 
-                        CheckIndex.Instance.SetCharacterIndex("Character1");
+                        CheckIndex.Instance.SetCharacterIndex(0);
 
                         // 2초 후 커스텀UI 나옴
                         StartCoroutine(CharacterCustom());
@@ -95,14 +95,14 @@ public class TouchManager : MonoBehaviour
 
                         //hitInfo.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                         //cam.transform.localEulerAngles = hitInfo.transform.localEulerAngles;
-                        particleActive();
+                        //particleActive();
 
                         // 나머지 캐릭터들 비활성화
                         characters[0].gameObject.SetActive(false);
                         characters[2].gameObject.SetActive(false);
                         characters[3].gameObject.SetActive(false);
 
-                        CheckIndex.Instance.SetCharacterIndex("Character2");
+                        CheckIndex.Instance.SetCharacterIndex(1);
 
 
                         // 2초 후 커스텀UI 나옴
@@ -122,14 +122,14 @@ public class TouchManager : MonoBehaviour
                         //hitInfo.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                         //cam.transform.localEulerAngles = hitInfo.transform.localEulerAngles;
 
-                        particleActive();
+                        //particleActive();
 
                         // 나머지 캐릭터들 비활성화
                         characters[0].gameObject.SetActive(false);
                         characters[1].gameObject.SetActive(false);
                         characters[3].gameObject.SetActive(false);
 
-                        CheckIndex.Instance.SetCharacterIndex("Character3");
+                        CheckIndex.Instance.SetCharacterIndex(2);
 
 
                         // 2초 후 커스텀UI 나옴
@@ -148,14 +148,14 @@ public class TouchManager : MonoBehaviour
                         //hitInfo.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                         //cam.transform.localEulerAngles = hitInfo.transform.localEulerAngles;
 
-                        particleActive();
+                        //particleActive();
 
                         // 나머지 캐릭터들 비활성화
                         characters[0].gameObject.SetActive(false);
                         characters[1].gameObject.SetActive(false);
                         characters[2].gameObject.SetActive(false);
 
-                        CheckIndex.Instance.SetCharacterIndex("Character4");
+                        CheckIndex.Instance.SetCharacterIndex(3);
 
                         // 2초 후 커스텀UI 나옴
                         StartCoroutine(CharacterCustom());
@@ -237,7 +237,7 @@ public class TouchManager : MonoBehaviour
                     characters[2].gameObject.SetActive(false);
                     characters[3].gameObject.SetActive(false);
 
-                    CheckIndex.Instance.SetCharacterIndex("Character1");
+                    CheckIndex.Instance.SetCharacterIndex(0);
 
                     // 2초 후 커스텀UI 나옴
                     StartCoroutine(CharacterCustom());
@@ -261,7 +261,7 @@ public class TouchManager : MonoBehaviour
                     characters[2].gameObject.SetActive(false);
                     characters[3].gameObject.SetActive(false);
 
-                    CheckIndex.Instance.SetCharacterIndex("Character2");
+                    CheckIndex.Instance.SetCharacterIndex(1);
 
 
                     // 2초 후 커스텀UI 나옴
@@ -288,7 +288,7 @@ public class TouchManager : MonoBehaviour
                     characters[1].gameObject.SetActive(false);
                     characters[3].gameObject.SetActive(false);
 
-                    CheckIndex.Instance.SetCharacterIndex("Character3");
+                    CheckIndex.Instance.SetCharacterIndex(2);
 
 
                     // 2초 후 커스텀UI 나옴
@@ -314,7 +314,7 @@ public class TouchManager : MonoBehaviour
                     characters[1].gameObject.SetActive(false);
                     characters[2].gameObject.SetActive(false);
 
-                    CheckIndex.Instance.SetCharacterIndex("Character4");
+                    CheckIndex.Instance.SetCharacterIndex(3);
 
                     // 2초 후 커스텀UI 나옴
                     StartCoroutine(CharacterCustom());
