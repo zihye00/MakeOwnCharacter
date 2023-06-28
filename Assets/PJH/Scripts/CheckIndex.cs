@@ -7,17 +7,44 @@ using UnityEngine;
 
 public class CheckIndex : MonoBehaviour
 {
+    private static CheckIndex instance;
 
-    // 인덱스 지정
-    // 특정 인덱스일때 특정 프리팹 생성
-    // CaracterIndex 저장
-    public void SetCharacterIdx(int idx)
+    public static CheckIndex Instance
     {
-
+        get
+        {
+            if(instance == null)
+            {
+                DontDestroyOnLoad(Instance);
+            }
+            return instance;
+        }
     }
 
-    // 활성화되어있는 캐릭터 Index에 따라 UI 이미지 생성하기
-    public void InstanceUIImage()
+    private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }
+    }
+
+    Dictionary<string, string> characterIndex = new Dictionary<string, string>();
+
+    // 캐릭터에 따른 Index저장
+
+    public void SetCharacterIndex(string character)
+    {
+        if (characterIndex.ContainsKey("Character"))
+            characterIndex["Character"] = character;
+        else      
+            characterIndex.Add("Character", character);        
+    }
+
+    // 캐릭터에 따른 UI 생성
+    public void InstanceUI()
+    {
+        
     }
 }

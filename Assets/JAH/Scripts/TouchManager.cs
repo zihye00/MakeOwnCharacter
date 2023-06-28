@@ -56,6 +56,8 @@ public class TouchManager : MonoBehaviour
                         //hitInfo.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                         //cam.transform.localEulerAngles = hitInfo.transform.localEulerAngles;
 
+                        CheckIndex.Instance.SetCharacterIndex("Character1");
+
                         // 2초 후 커스텀UI 나옴
                         StartCoroutine(CharacterCustom());
                     }
@@ -70,6 +72,9 @@ public class TouchManager : MonoBehaviour
 
                         //hitInfo.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                         //cam.transform.localEulerAngles = hitInfo.transform.localEulerAngles;
+
+                        CheckIndex.Instance.SetCharacterIndex("Character2");
+
 
                         // 2초 후 커스텀UI 나옴
                         StartCoroutine(CharacterCustom());
@@ -87,6 +92,9 @@ public class TouchManager : MonoBehaviour
                         //hitInfo.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                         //cam.transform.localEulerAngles = hitInfo.transform.localEulerAngles;
 
+                        CheckIndex.Instance.SetCharacterIndex("Character3");
+
+
                         // 2초 후 커스텀UI 나옴
                         StartCoroutine(CharacterCustom());
                     }
@@ -102,6 +110,8 @@ public class TouchManager : MonoBehaviour
 
                         //hitInfo.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                         //cam.transform.localEulerAngles = hitInfo.transform.localEulerAngles;
+
+                        CheckIndex.Instance.SetCharacterIndex("Character4");
 
                         // 2초 후 커스텀UI 나옴
                         StartCoroutine(CharacterCustom());
