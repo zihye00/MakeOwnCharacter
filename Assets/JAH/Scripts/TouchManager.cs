@@ -32,30 +32,56 @@ public class TouchManager : MonoBehaviour
     private float spawnsTime;
     public float defaultTime = 0.05f;
 
+    Vector2 inputPos = Vector2.zero;
+    bool isPressed = false;
+
     private void Update()
     {
+        inputPos = Vector2.zero;
+        isPressed = false;
+
         spawnsTime += Time.deltaTime;
+        
+        UpdateInputInfo();
         Touch();
-        MouseClick();
+        //MouseClick();
     }
+
+
+    private void UpdateInputInfo()
+    {
+#if UNITY_EDITOR
+        // 첫 번째 터치 정보 불러오기       
+        inputPos = Input.mousePosition;
+        isPressed = Input.GetMouseButton(0);
+#else
+        // 첫 번째 터치 정보 불러오기
+        Touch touch = Input.GetTouch(0);            
+        
+        // 첫 번째 터치 정보 불러오기       
+        inputPos = Input.GetTouch(0).position;
+        isPressed = touch.phase == TouchPhase.Began;
+#endif
+    }
+
     // 역할 1 : Character_1(나 자신)을 터치하면 나 자신만 활성화
     public void Touch()
     {
+#if !UNITY_EDITOR
         // 터치하지 않으면 반응X
         if (Input.touchCount == 0) return;
+#endif
 
-        // 첫 번째 터치 정보 불러오기
-        Touch touch = Input.GetTouch(0);
 
         // 캐릭터들이 인식이 됐으면(나 자신 활성화) 
-        if(gameObject.activeSelf == true)
+        if (gameObject.activeSelf == true)
         {
             // Plan Finder의 앵커스테이지에서 Ground Plan Stage 제거
             MidAirPositionerBehaviour.Destroy(midairFinder);
 
-            if (touch.phase == TouchPhase.Began)
+            if (isPressed)
             {
-                Ray ray = cam.ScreenPointToRay(Input.GetTouch(0).position);
+                Ray ray = cam.ScreenPointToRay(inputPos);
 
                 RaycastHit hitInfo = new RaycastHit();
                 if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity))
@@ -179,9 +205,8 @@ public class TouchManager : MonoBehaviour
     // 역할 2 : 터치 이펙트 추가
     private void EffectParticle()
     {
-
         // 파티클이 나오는 위치.-> 첫번째 터치 위치
-        Vector3 pos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+        Vector3 pos = Camera.main.ScreenToWorldPoint(inputPos);
         pos.z = 0;
         Instantiate(effectPref, pos, Quaternion.identity);
     }
@@ -201,10 +226,21 @@ public class TouchManager : MonoBehaviour
     public void CharactersActive()
     {
         // 캐릭터4명이 다시 뜸
-        characters[0].gameObject.SetActive(true);
-        characters[1].gameObject.SetActive(true);
-        characters[2].gameObject.SetActive(true);
-        characters[3].gameObject.SetActive(true);
+        for (int cIdx = 0; cIdx < characters.Length; cIdx++)
+        {
+            characters[cIdx].gameObject.SetActive(true);
+            MeshRenderer[] meshes = characters[cIdx].GetComponentsInChildren<MeshRenderer>();
+
+            for (int mIdx = 0; mIdx < meshes.Length; mIdx++)
+            {
+                meshes[mIdx].enabled = true;
+            }
+        }
+        
+        //characters[0].gameObject.SetActive(true);
+        //characters[1].gameObject.SetActive(true);
+        //characters[2].gameObject.SetActive(true);
+        //characters[3].gameObject.SetActive(true);
 
         // CustomUI 비활성화
         customUI.gameObject.SetActive(false);
