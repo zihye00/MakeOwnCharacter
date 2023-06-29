@@ -47,7 +47,7 @@ public class CameraView : MonoBehaviour
         if(selectedCameraIdex >= 0)
         {
             // 선택된 셀카모드 카메라를 가져옴
-            camTexture = new WebCamTexture(devices[selectedCameraIdex].name);
+            camTexture = new WebCamTexture(devices[selectedCameraIdex].name, Screen.width, Screen.height);
 
             // 카메라 프레임 설정
             camTexture.requestedFPS = 30;
