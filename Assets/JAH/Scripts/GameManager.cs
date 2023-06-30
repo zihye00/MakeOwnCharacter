@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("작동!  Save" + inputName.text);
         // 캐릭터 이름 값을 저장함
         PlayerPrefs.SetString("Name", inputName.text);
+        // --> 프리팹으로 저장!
+
     }
 
     // 역할 2: 캐릭터 데이터 로드
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("작동2!" + PlayerPrefs.GetString("Name"));
             inputName.text = PlayerPrefs.GetString("Name");
+            // ->>> 인스턴시에이트!
         }
     }
 
