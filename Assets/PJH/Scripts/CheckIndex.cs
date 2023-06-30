@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Character Index 저장하는 스크립트
 // 저장한 Index에 따라 UI프리팹 생성 다르게 하기
@@ -13,7 +14,7 @@ public class CheckIndex : MonoBehaviour
     public string bottonName;
     public int characterIndex;
     public int itemIdx;
-    public GameObject image;
+    public Sprite image;
 
 
     private static CheckIndex instance;
@@ -64,13 +65,14 @@ public class CheckIndex : MonoBehaviour
         bottonName = botton["Botton"];
         var Items = ItemManager.Instance.items;
 
-        for (int i = 0; i < Items.Count; i++)
-        {
-            Item item = Items[i];
-            if (item.characterIdx == characterIndex)
-            {
-                image = Resources.Load<GameObject>($"Prefab/{bottonName}{characterIndex}{item.Idx}");
-            }            
-        }        
+        //for (int i = 0; i < Items.Count; i++)
+        //{
+        //    Item item = Items[i];
+        //    if (item.characterIdx == characterIndex)
+        //    {
+        //        GameObject uiImage = Resources.Load<GameObject>($"Prefab/{bottonName}{characterIndex}{item.Idx}");
+
+        //    }            
+        //}        
     }
 }

@@ -8,21 +8,19 @@ using UnityEngine;
 public class UIPrefab : MonoBehaviour
 {
     [SerializeField]
-    private string name;
+    public string name;
     [SerializeField]
-    private GameObject image;
+    public GameObject image;
     [SerializeField]
-    private int characterIdx;
+    public int characterIdx;
     [SerializeField]
-    private int itemIdx;
+    public int itemIdx;
 
     private List<ItemManager> items = new List<ItemManager>();
 
     private void Start()
     {
-        image = CheckIndex.Instance.image;
-        characterIdx = CheckIndex.Instance.characterIndex;
-        itemIdx = CheckIndex.Instance.itemIdx;
+
     }
 
 }

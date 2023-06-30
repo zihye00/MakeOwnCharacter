@@ -22,6 +22,11 @@ public class ItemManager : MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
+    public List<Item> Tops = new List<Item>();
+    public List<Item> Hats = new List<Item>();
+    public List<Item> Bottoms = new List<Item>();
+    public List<Item> Shoes = new List<Item>();
+
     private void Awake()
     {
         Instance = this;
@@ -35,7 +40,10 @@ public class ItemManager : MonoBehaviour
         top0A.characterIdx = 0;
         top0A.Idx = 0;
         top0A.buttonName = "Top";
+        
+        Tops.Add(top0A);
         items.Add(top0A);
+        
 
         Item top0B = new Item();
         top0B.name = "Top0B";
@@ -43,7 +51,10 @@ public class ItemManager : MonoBehaviour
         top0B.characterIdx = 0;
         top0B.Idx = 1;
         top0B.buttonName = "Top";
+
+        Tops.Add(top0B);
         items.Add(top0B);
+
 
         Item top1A = new Item();
         top1A.name = "Top1A";
@@ -51,6 +62,8 @@ public class ItemManager : MonoBehaviour
         top1A.characterIdx = 1;
         top1A.Idx = 0;
         top1A.buttonName = "Top";
+
+        Tops.Add(top1A);
         items.Add(top1A);
         
         Item top1B = new Item();
@@ -59,6 +72,7 @@ public class ItemManager : MonoBehaviour
         top1B.characterIdx = 1;
         top1B.Idx = 1;
         top1B.buttonName = "Top";
+        Tops.Add(top1B);
         items.Add(top1B);
 
         Item top2A = new Item();
@@ -67,6 +81,7 @@ public class ItemManager : MonoBehaviour
         top2A.characterIdx = 2;
         top2A.Idx = 0;
         top2A.buttonName = "Top";
+        Tops.Add(top2A);
         items.Add(top2A);
         
         Item top2B = new Item();
@@ -75,6 +90,7 @@ public class ItemManager : MonoBehaviour
         top2B.characterIdx = 2;
         top2B.Idx = 1;
         top2B.buttonName = "Top";
+        Tops.Add(top2B);
         items.Add(top2B);
          
         Item top3A = new Item();
@@ -83,6 +99,7 @@ public class ItemManager : MonoBehaviour
         top3A.characterIdx = 3;
         top2A.Idx = 0;
         top2A.buttonName = "Top";
+        Tops.Add(top3A);
         items.Add(top3A);
 
         Item top3B = new Item();
@@ -91,6 +108,7 @@ public class ItemManager : MonoBehaviour
         top3B.characterIdx = 3;
         top2B.Idx = 1;
         top2B.buttonName = "Top";
+        Tops.Add(top3B);
         items.Add(top3B);
 
         Item hat0A = new Item();
@@ -98,20 +116,29 @@ public class ItemManager : MonoBehaviour
         hat0A.image = "Hat0A";
         hat0A.characterIdx = 0;
         hat0A.Idx = 0;
+        hat0A.buttonName = "Hat";
+        Hats.Add(hat0A);
         items.Add(hat0A);
+
 
         Item hat0B = new Item();
         hat0B.name = "Hat0B";
         hat0B.image = "Hat0B";
         hat0B.characterIdx = 0;
         hat0B.Idx = 1;
+        hat0B.buttonName = "Hat";
+        Hats.Add(hat0B);
         items.Add(hat0B);
+
 
         Item hat0C = new Item();
         hat0C.name = "Hat0C";
         hat0C.image = "Hat0C";
         hat0C.characterIdx = 0;
         hat0C.Idx = 3;
+        hat0C.buttonName = "Hat";
+
+        Hats.Add(hat0C);
         items.Add(hat0C);
 
         Item hat0D = new Item();
@@ -119,6 +146,8 @@ public class ItemManager : MonoBehaviour
         hat0D.image = "Hat0D";
         hat0D.characterIdx = 0;
         hat0D.Idx = 4;
+        hat0D.buttonName = "Hat";
+        Hats.Add(hat0D);
         items.Add(hat0D);
 
         Item hat1A = new Item();
@@ -126,6 +155,8 @@ public class ItemManager : MonoBehaviour
         hat1A.image = "Hat1A";
         hat1A.characterIdx = 1;
         hat1A.Idx = 0;
+        hat1A.buttonName = "Hat";
+        Hats.Add(hat1A);
         items.Add(hat1A);
 
         Item hat1B = new Item();
@@ -133,6 +164,8 @@ public class ItemManager : MonoBehaviour
         hat1B.image = "Hat1B";
         hat1B.characterIdx = 1;
         hat1B.Idx = 1;
+        hat1B.buttonName = "Hat";
+        Hats.Add(hat1B);
         items.Add(hat1B);
 
         Item hat2A = new Item();
@@ -140,6 +173,8 @@ public class ItemManager : MonoBehaviour
         hat2A.image = "Hat2A";
         hat2A.characterIdx = 2;
         hat2A.Idx = 0;
+        hat2A.buttonName = "Hat";
+        Hats.Add(hat2A);
         items.Add(hat2A);
 
         Item hat2B = new Item();
@@ -147,6 +182,8 @@ public class ItemManager : MonoBehaviour
         hat2B.image = "Hat2B";
         hat2B.characterIdx = 2;
         hat2B.Idx = 1;
+        hat2B.buttonName = "Hat";
+        Hats.Add(hat2B);
         items.Add(hat2B);
 
         Item hat3A = new Item();
@@ -154,6 +191,8 @@ public class ItemManager : MonoBehaviour
         hat3A.image = "Hat3A";
         hat3A.characterIdx = 3;
         hat3A.Idx = 0;
+        hat3A.buttonName = "Hat";
+        Hats.Add(hat3A);
         items.Add(hat3A);
 
         Item hat3B = new Item();
@@ -161,6 +200,8 @@ public class ItemManager : MonoBehaviour
         hat3B.image = "Hat3B";
         hat3B.characterIdx = 3;
         hat3B.Idx = 1;
+        hat3B.buttonName = "Hat";
+        Hats.Add(hat3B);
         items.Add(hat3B);
 
         Item bottom0A = new Item();
@@ -168,6 +209,8 @@ public class ItemManager : MonoBehaviour
         bottom0A.image = "Bottom0A";
         bottom0A.characterIdx = 0;
         bottom0A.Idx = 0;
+        bottom0A.buttonName = "Bottom";
+        Bottoms.Add(bottom0A);
         items.Add(bottom0A);
 
         Item bottom0B = new Item();
@@ -175,6 +218,8 @@ public class ItemManager : MonoBehaviour
         bottom0B.image = "Bottom0B";
         bottom0B.characterIdx = 0;
         bottom0B.Idx = 1;
+        bottom0B.buttonName = "Bottom";
+        Bottoms.Add(bottom0B);
         items.Add(bottom0B);
 
         Item bottom1A = new Item();
@@ -182,6 +227,8 @@ public class ItemManager : MonoBehaviour
         bottom1A.image = "Bottom1A";
         bottom1A.characterIdx = 1;
         bottom1A.Idx = 0;
+        bottom1A.buttonName = "Bottom";
+        Bottoms.Add(bottom1A);
         items.Add(bottom1A);
 
         Item bottom1B = new Item();
@@ -189,6 +236,8 @@ public class ItemManager : MonoBehaviour
         bottom1B.image = "Bottom1B";
         bottom1B.characterIdx = 1;
         bottom1B.Idx = 1;
+        bottom1B.buttonName = "Bottom";
+        Bottoms.Add(bottom1B);
         items.Add(bottom1B);
 
         Item bottom2A = new Item();
@@ -196,6 +245,8 @@ public class ItemManager : MonoBehaviour
         bottom2A.image = "Bottom2A";
         bottom2A.characterIdx = 2;
         bottom2A.Idx = 0;
+        bottom2A.buttonName = "Bottom";
+        Bottoms.Add(bottom2A);
         items.Add(bottom2A);
 
         Item bottom2B = new Item();
@@ -203,6 +254,8 @@ public class ItemManager : MonoBehaviour
         bottom2B.image = "Bottom2B";
         bottom2B.characterIdx = 2;
         bottom2B.Idx = 1;
+        bottom2B.buttonName = "Bottom";
+        Bottoms.Add(bottom2B);
         items.Add(bottom2B);
 
         Item bottom3A = new Item();
@@ -210,6 +263,8 @@ public class ItemManager : MonoBehaviour
         bottom3A.image = "Bottom3A";
         bottom3A.characterIdx = 3;
         bottom3A.Idx = 0;
+        bottom3A.buttonName = "Bottom";
+        Bottoms.Add(bottom3A);
         items.Add(bottom3A);
 
         Item bottom3B = new Item();
@@ -217,6 +272,8 @@ public class ItemManager : MonoBehaviour
         bottom3B.image = "Bottom3B";
         bottom3B.characterIdx = 3;
         bottom3B.Idx = 1;
+        bottom3B.buttonName = "Bottom";
+        Bottoms.Add(bottom3B);
         items.Add(bottom3B);
 
         Item shoes0A = new Item();
@@ -224,6 +281,8 @@ public class ItemManager : MonoBehaviour
         shoes0A.image = "Shoes0A";
         shoes0A.characterIdx = 0;
         shoes0A.Idx = 0;
+        shoes0A.buttonName = "Shoes";
+        Shoes.Add(shoes0A);
         items.Add(shoes0A);
 
         Item shoes0B = new Item();
@@ -231,6 +290,8 @@ public class ItemManager : MonoBehaviour
         shoes0B.image = "Shoes0B";
         shoes0B.characterIdx = 0;
         shoes0B.Idx = 1;
+        shoes0B.buttonName = "Shoes";
+        Shoes.Add(shoes0B);
         items.Add(shoes0B);
 
         Item shoes1A = new Item();
@@ -238,6 +299,8 @@ public class ItemManager : MonoBehaviour
         shoes1A.image = "Shoes1A";
         shoes1A.characterIdx = 1;
         shoes1A.Idx = 0;
+        shoes1A.buttonName = "Shoes";
+        Shoes.Add(shoes1A);
         items.Add(shoes1A);
 
         Item shoes1B = new Item();
@@ -245,6 +308,8 @@ public class ItemManager : MonoBehaviour
         shoes1B.image = "Shoes1B";
         shoes1B.characterIdx = 1;
         shoes1B.Idx = 1;
+        shoes1B.buttonName = "Shoes";
+        Shoes.Add(shoes1B);
         items.Add(shoes1B);
 
         Item shoes2A = new Item();
@@ -252,6 +317,8 @@ public class ItemManager : MonoBehaviour
         shoes2A.image = "Shoes2A";
         shoes2A.characterIdx = 2;
         shoes2A.Idx = 0;
+        shoes2A.buttonName = "Shoes";
+        Shoes.Add(shoes2A);
         items.Add(shoes2A);
 
         Item shoes2B = new Item();
@@ -259,6 +326,8 @@ public class ItemManager : MonoBehaviour
         shoes2B.image = "Shoes2B";
         shoes2B.characterIdx = 2;
         shoes2B.Idx = 1;
+        shoes2B.buttonName = "Shoes";
+        Shoes.Add(shoes2B);
         items.Add(shoes2B);
 
         Item shoes3A = new Item();
@@ -266,6 +335,8 @@ public class ItemManager : MonoBehaviour
         shoes3A.image = "Shoes3A";
         shoes3A.characterIdx = 3;
         shoes3A.Idx = 0;
+        shoes3A.buttonName = "Shoes";
+        Shoes.Add(shoes3A);
         items.Add(shoes3A);
 
         Item shoes3B = new Item();
@@ -273,6 +344,8 @@ public class ItemManager : MonoBehaviour
         shoes3B.image = "Shoes3B";
         shoes3B.characterIdx = 3;
         shoes3B.Idx = 1;
+        shoes3B.buttonName = "Shoes";
+        Shoes.Add(shoes3B);
         items.Add(shoes3B);
     }
 }

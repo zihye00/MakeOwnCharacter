@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // object pooling 사용
 
@@ -13,9 +14,8 @@ public class UIManager : MonoBehaviour
     }
 
     private GameObject itemUI;
-    private GameObject instanceUI;
     private int uiPoolSize = 3;
-    private GameObject[] uiPool;
+    private List<GameObject> uiPool;
     private List<GameObject> deactiveUIList;
 
     public GameObject uiparent;
@@ -23,26 +23,26 @@ public class UIManager : MonoBehaviour
     private string bottonName;
     private int characterIdx;
 
-    //public List<Item> items = new List<Item>();
-    private string[] buttonNames = new string[4] { "Hat", "Top", "Bottom", "shoes" };
-
     private void Start()
     {
         itemUI = Resources.Load<GameObject>("Prefab/ItemUI");
 
-        InitUIObjectPooling();
+       // InitUIObjectPooling();
     }
 
     // UI 생성후 비활성화
     private void InitUIObjectPooling()
     {
-        uiPool = new GameObject[uiPoolSize];
+        uiPool = new List<GameObject>();
+
         // poolsize는 캐릭터, 카테고리 정보에 따라 바뀌는 것 넣어주기
         deactiveUIList = new List<GameObject>();
+        return;
+
         for (int i = 0; i < uiPoolSize; i++)
         {
             Transform parent = uiparent.transform;
-            instanceUI = Instantiate(itemUI, parent);
+            GameObject instanceUI = Instantiate(itemUI, parent);
             instanceUI.gameObject.SetActive(false);
             uiPool[i] = instanceUI;
             deactiveUIList.Add(instanceUI);
@@ -53,89 +53,57 @@ public class UIManager : MonoBehaviour
     public void MoveToUIParent()
     {
         bottonName = CheckIndex.Instance.bottonName;
-        var Items = ItemManager.Instance.items;
+        characterIdx = CheckIndex.Instance.characterIndex;
 
-        for (int i = 0; i < Items.Count; i++)
+        deactiveUIList = new List<GameObject>();
+        uiPool = new List<GameObject>();
+
+        var tops = ItemManager.Instance.Tops;
+        List<Item> hats = ItemManager.Instance.Hats;
+        var bottoms = ItemManager.Instance.Bottoms;
+        var shoes = ItemManager.Instance.Shoes;
+
+        // UI Tem 생성(다시봐보기) -> 구조이해
+        if (bottonName == "Hat")
         {
-            //int buttonNameNumber = i.
-            //for (int buttonMameNumber = 0; buttonMameNumber <= buttonNames.Length; buttonMameNumber++)
-            //{
+            for (int i = 0; i < hats.Count; i++)
+            {
+                var hat = hats[i];
+                if (hat.characterIdx != characterIdx)
+                    continue;
 
-                print("반복횟수 확인");
-                //if (bottonName == buttonNames[buttonMameNumber])
-                //{
-                //    print("진입");
-                //    var itemLength = Items[i];
-                //    var characterIdxNumber = itemLength.characterIdx;
-                //    for (int number = 0; number < characterIdxNumber; number++)
-                //    {
-                //        GameObject instanceui = deactiveUIList[0];
-                //        //Transform parent = uiparent.transform;
-                //        //instanceui.transform.SetParent(parent);
-                //        instanceui.gameObject.SetActive(true);
-                //        deactiveUIList.RemoveAt(0);
-                //    }
-                //}
-                if (bottonName == "Hat")
-                {
-                    print("진입Hat");
-                    var itemLength = Items[i];
-                    var characterIdxNumber = itemLength.characterIdx;
-                    for (int number = 0; number < characterIdxNumber; number++)
-                    {
-                        GameObject instanceui = deactiveUIList[0];
-                        //Transform parent = uiparent.transform;
-                        //instanceui.transform.SetParent(parent);
-                        instanceui.gameObject.SetActive(true);
-                        deactiveUIList.RemoveAt(0);
-                    }
-                }
-                if (bottonName == "Top")
-                {
-                    print("진입Top");//8-10번 돌아야함
-                    var itemLength = Items[i];
-                    var characterIdxNumber = itemLength.characterIdx;
-                    for (int number = 0; number < characterIdxNumber; number++)
-                    {
-                        print("?");//2-4번 돌아야 함
+                GameObject uiItem = null;
 
-                        //GameObject instanceui = deactiveUIList[0];
-                        //Transform parent = uiparent.transform;
-                        //instanceui.transform.SetParent(parent);
-                        instanceUI.gameObject.SetActive(true);
-                        //deactiveUIList.RemoveAt(0);
-                    }
-                }
-                if (bottonName == "Bottom")
+                if (deactiveUIList.Count > 0)
                 {
-                    print("진입Bottom");
-                    var itemLength = Items[i];
-                    var characterIdxNumber = itemLength.characterIdx;
-                    for (int number = 0; number < characterIdxNumber; number++)
-                    {
-                        GameObject instanceui = deactiveUIList[0];
-                        //Transform parent = uiparent.transform;
-                        //instanceui.transform.SetParent(parent);
-                        instanceui.gameObject.SetActive(true);
-                        deactiveUIList.RemoveAt(0);
-                    }
+                    uiItem = deactiveUIList[0];
+                    deactiveUIList.RemoveAt(0);
+                    uiPool.Add(uiItem);
                 }
-                if (bottonName == "Shoes")
+                else
                 {
-                    print("Shoes");
-                    var itemLength = Items[i];
-                    var characterIdxNumber = itemLength.characterIdx;
-                    for (int number = 0; number < characterIdxNumber; number++)
-                    {
-                        GameObject instanceui = deactiveUIList[0];
-                        //Transform parent = uiparent.transform;
-                        //instanceui.transform.SetParent(parent);
-                        instanceui.gameObject.SetActive(true);
-                        deactiveUIList.RemoveAt(0);
-                    }
+                    Transform parent = uiparent.transform;
+                    uiItem = Instantiate(itemUI, parent);
+                    uiPool.Add(uiItem);
                 }
-            //}
 
+                // uiItem
+                // UIPrefab의 정보 가져오기
+
+                Sprite sprite = Resources.Load<Sprite>($"Sprite/{bottonName}{characterIdx}{hat.Idx}");
+                uiItem.GetComponent<UIPrefab>().image.GetComponent<Image>().sprite = sprite;
+
+
+                //UI아이템에 DeactiveList정보를 저장
+                if (uiItem.activeSelf == false)
+                {
+                    deactiveUIList.Add(uiItem);
+
+                }
+
+
+            }
         }
+
     }
 }
