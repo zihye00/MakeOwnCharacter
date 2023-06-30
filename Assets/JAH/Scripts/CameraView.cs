@@ -31,7 +31,15 @@ public class CameraView : MonoBehaviour
         // 스마트폰의 카메라 정보를 모두 가져온다
         WebCamDevice[] devices = WebCamTexture.devices;
         int selectedCameraIdex = -1;
-
+        for (int i = 0; i < devices.Length; i++)
+        {
+            Debug.Log("장치 " + devices[i].name);
+            Debug.Log("장치 " + devices[i].isFrontFacing);
+            Debug.Log("장치 " + devices[i].kind);
+            Debug.Log("장치 " + devices[i].depthCameraName);
+            Debug.Log("장치 " + devices[i].isAutoFocusPointSupported);
+            Debug.Log("장치 " + devices[i].availableResolutions);
+        }
         // 셀카 모드 카메라 찾기
         for (int i = 0;  i < devices.Length; i++)
         {
@@ -48,6 +56,55 @@ public class CameraView : MonoBehaviour
         {
             // 선택된 셀카모드 카메라를 가져옴
             camTexture = new WebCamTexture(devices[selectedCameraIdex].name, Screen.width, Screen.height);
+
+            // 카메라 프레임 설정
+            camTexture.requestedFPS = 30;
+
+            // 영상을 raw Image에 할당
+            cameraViewImage.texture = camTexture;
+
+            // 카메라 시작
+            camTexture.Play();
+        }
+    }
+
+    // 후면 카메라 On
+    public void CameraOnBack()
+    {
+        // 카메라 권한 확인
+        if (!Permission.HasUserAuthorizedPermission(Permission.Camera))
+        {
+            Permission.RequestUserPermission(Permission.Camera);
+        }
+
+        // 카메라가 없다면...
+        if (WebCamTexture.devices.Length == 0)
+        {
+            print("카메라 없음");
+            return;
+        }
+
+        // 스마트폰의 카메라 정보를 모두 가져온다
+        WebCamDevice[] devices = WebCamTexture.devices;
+        int selectedCameraIdex = -1;
+
+     
+
+        // 후면 카메라 찾기
+        for (int i = 0; i < devices.Length; i++)
+        {
+            if (devices[i].isFrontFacing == false)
+            {
+                selectedCameraIdex = i;
+                break;
+            }
+        }
+
+        // 카메라 켜기
+        if (selectedCameraIdex >= 0)
+        {
+            // 선택된 후면모드 카메라를 가져옴
+            camTexture = new WebCamTexture(devices[selectedCameraIdex].name);
 
             // 카메라 프레임 설정
             camTexture.requestedFPS = 30;

@@ -6,15 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/JAH/Scenes/StartScene.unity
-    guid: 1e7a5ba56eb78414a9ca073f4edea736
-  - enabled: 1
-    path: Assets/JAH/Scenes/LobbyScene.unity
-    guid: 9ad702ae304167942b6f8364fa6634d5
-  - enabled: 1
-    path: Assets/JAH/Scenes/SaveScene.unity
-    guid: 73f19fb34400fc844b848018304ccb5e
-  - enabled: 1
     path: Assets/JAH/Scenes/NameCamera.unity
     guid: b227a932cc4449041876837afea7d7ea
   m_configObjects:
