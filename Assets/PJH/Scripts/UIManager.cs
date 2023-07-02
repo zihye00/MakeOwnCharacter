@@ -14,37 +14,41 @@ public class UIManager : MonoBehaviour
     }
 
     private GameObject itemUI;
-    private int uiPoolSize = 3;
-    private List<GameObject> uiPool;
-    private List<GameObject> deactiveUIList;
+    private int uiPoolSize = 4;
+    [SerializeField]
+
+    public List<GameObject> uiPool;
+    [SerializeField]
+
+    public List<GameObject> deactiveUIList;
 
     public GameObject uiparent;
 
     private string bottonName;
     private int characterIdx;
+    private int idx;
+    private string characterName;
 
     private void Start()
     {
         itemUI = Resources.Load<GameObject>("Prefab/ItemUI");
 
-       // InitUIObjectPooling();
+         InitUIObjectPooling();
     }
 
     // UI 생성후 비활성화
     private void InitUIObjectPooling()
     {
-        uiPool = new List<GameObject>();
+        //uiPool = new List<GameObject>();
 
         // poolsize는 캐릭터, 카테고리 정보에 따라 바뀌는 것 넣어주기
-        deactiveUIList = new List<GameObject>();
-        return;
+        //deactiveUIList = new List<GameObject>();
 
         for (int i = 0; i < uiPoolSize; i++)
         {
             Transform parent = uiparent.transform;
             GameObject instanceUI = Instantiate(itemUI, parent);
             instanceUI.gameObject.SetActive(false);
-            uiPool[i] = instanceUI;
             deactiveUIList.Add(instanceUI);
         }
     }
@@ -54,10 +58,14 @@ public class UIManager : MonoBehaviour
     {
         bottonName = CheckIndex.Instance.bottonName;
         characterIdx = CheckIndex.Instance.characterIndex;
+        characterName = ItemManager.Instance.name;
+  
 
-        deactiveUIList = new List<GameObject>();
-        uiPool = new List<GameObject>();
+        //deactiveUIList = new List<GameObject>();
 
+        //uiPool = new List<GameObject>();
+
+        List<Item> items = ItemManager.Instance.items;
         var tops = ItemManager.Instance.Tops;
         List<Item> hats = ItemManager.Instance.Hats;
         var bottoms = ItemManager.Instance.Bottoms;
@@ -70,7 +78,45 @@ public class UIManager : MonoBehaviour
             {
                 var hat = hats[i];
                 if (hat.characterIdx != characterIdx)
+                {
                     continue;
+                }
+                GameObject uiItem = null;
+
+                // uiItem이 사용 될때
+                if (deactiveUIList.Count > 0)
+                {
+                    uiItem = deactiveUIList[0];
+                    uiItem.SetActive(true);
+                    deactiveUIList.RemoveAt(0);
+                    uiPool.Add(uiItem);
+                }
+                else
+                {
+                    Transform parent = uiparent.transform;
+                    uiItem = Instantiate(itemUI, parent);
+                    uiPool.Add(uiItem);
+                }
+                // 사용하고 다른 버튼 눌렀을때 UI deactive 하기
+
+
+                Sprite sprite = Resources.Load<Sprite>($"Sprite/{bottonName}{characterIdx}{hat.Idx}");
+                uiItem.GetComponent<UIPrefab>().image.GetComponent<Image>().sprite = sprite;
+                //name가져오기
+                characterName = $"{bottonName}{characterIdx}{hat.Idx}";
+                uiItem.GetComponent<UIPrefab>().name = characterName;              
+            }
+        }
+        // UI Tem 생성(다시봐보기) -> 구조이해
+        if (bottonName == "Top")
+        {
+            for (int i = 0; i < tops.Count; i++)
+            {
+                var top = tops[i];
+                if (top.characterIdx != characterIdx)
+                {
+                    continue;
+                }
 
                 GameObject uiItem = null;
 
@@ -90,20 +136,84 @@ public class UIManager : MonoBehaviour
                 // uiItem
                 // UIPrefab의 정보 가져오기
 
-                Sprite sprite = Resources.Load<Sprite>($"Sprite/{bottonName}{characterIdx}{hat.Idx}");
+                Sprite sprite = Resources.Load<Sprite>($"Sprite/{bottonName}{characterIdx}{top.Idx}");
                 uiItem.GetComponent<UIPrefab>().image.GetComponent<Image>().sprite = sprite;
-
-
-                //UI아이템에 DeactiveList정보를 저장
-                if (uiItem.activeSelf == false)
-                {
-                    deactiveUIList.Add(uiItem);
-
-                }
-
-
+                //name가져오기
+                characterName = $"{bottonName}{characterIdx}{top.Idx}";
+                uiItem.GetComponent<UIPrefab>().name = characterName;               
             }
         }
+        // UI Tem 생성(다시봐보기) -> 구조이해
+        if (bottonName == "Bottom")
+        {
+            for (int i = 0; i < bottoms.Count; i++)
+            {
+                var bottom = bottoms[i];
+                if (bottom.characterIdx != characterIdx)
+                {
+                    continue;
+                }
 
+                GameObject uiItem = null;
+
+                if (deactiveUIList.Count > 0)
+                {
+                    uiItem = deactiveUIList[0];
+                    deactiveUIList.RemoveAt(0);
+                    uiPool.Add(uiItem);
+                }
+                else
+                {
+                    Transform parent = uiparent.transform;
+                    uiItem = Instantiate(itemUI, parent);
+                    uiPool.Add(uiItem);
+                }
+
+                // uiItem
+                // UIPrefab의 정보 가져오기
+
+                Sprite sprite = Resources.Load<Sprite>($"Sprite/{bottonName}{characterIdx}{bottom.Idx}");
+                uiItem.GetComponent<UIPrefab>().image.GetComponent<Image>().sprite = sprite;
+                //name가져오기
+                characterName = $"{bottonName}{characterIdx}{bottom.Idx}";
+                uiItem.GetComponent<UIPrefab>().name = characterName;               
+            }
+        }
+        // UI Tem 생성(다시봐보기) -> 구조이해
+        if (bottonName == "Shoes")
+        {
+            for (int i = 0; i < shoes.Count; i++)
+            {
+                var shoe = shoes[i];
+                if (shoe.characterIdx != characterIdx)
+                {
+                    continue;
+                }
+
+                GameObject uiItem = null;
+
+                if (deactiveUIList.Count > 0)
+                {
+                    uiItem = deactiveUIList[0];
+                    deactiveUIList.RemoveAt(0);
+                    uiPool.Add(uiItem);
+                }
+                else
+                {
+                    Transform parent = uiparent.transform;
+                    uiItem = Instantiate(itemUI, parent);
+                    uiPool.Add(uiItem);
+                }
+
+                // uiItem
+                // UIPrefab의 정보 가져오기
+
+                Sprite sprite = Resources.Load<Sprite>($"Sprite/{bottonName}{characterIdx}{shoe.Idx}");
+                uiItem.GetComponent<UIPrefab>().image.GetComponent<Image>().sprite = sprite;
+                //name가져오기
+                characterName = $"{bottonName}{characterIdx}{shoe.Idx}";
+                uiItem.GetComponent<UIPrefab>().name = characterName;             
+            }
+        }
     }
 }

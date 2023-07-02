@@ -10,10 +10,11 @@ public class CheckIndex : MonoBehaviour
 
     public Dictionary<string, int> character = new Dictionary<string, int>();
     public Dictionary<string, string> botton = new Dictionary<string, string>();
+    public Dictionary<string, int> itemIdx = new Dictionary<string, int>();
 
     public string bottonName;
     public int characterIndex;
-    public int itemIdx;
+    public int itemIdxs;
     public Sprite image;
 
 
@@ -57,22 +58,21 @@ public class CheckIndex : MonoBehaviour
         else
             botton.Add("Botton", bottonName);
     }
+    // 버튼에 따른 itemIndex저장
+    public void SetItemIndex(int idx)
+    {
+        if (itemIdx.ContainsKey("ItemIdx"))
+            itemIdx["ItemIdx"] = idx;
+        else
+            itemIdx.Add("ItemIdx", idx);
+    }
 
     // 조건에 따른 UI 이미지 생성
     public void SetUIFromDictionary()
     {
         characterIndex = (int)character["Character"];
         bottonName = botton["Botton"];
-        var Items = ItemManager.Instance.items;
 
-        //for (int i = 0; i < Items.Count; i++)
-        //{
-        //    Item item = Items[i];
-        //    if (item.characterIdx == characterIndex)
-        //    {
-        //        GameObject uiImage = Resources.Load<GameObject>($"Prefab/{bottonName}{characterIndex}{item.Idx}");
-
-        //    }            
-        //}        
+  
     }
 }
