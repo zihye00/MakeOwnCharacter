@@ -20,6 +20,8 @@ public class CharacterIndexInit : MonoBehaviour
     public List<GameObject> Top = new List<GameObject>();
     public List<GameObject> Bottom = new List<GameObject>();
     public List<GameObject> Shoes = new List<GameObject>();
+
+    public List<GameObject> Basic = new List<GameObject>();
     public GameObject uiItem;
 
     private void Start()

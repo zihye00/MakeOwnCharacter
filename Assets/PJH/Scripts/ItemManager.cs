@@ -74,6 +74,15 @@ public class ItemManager : MonoBehaviour
         top11.buttonName = "Top";
         Tops.Add(top11);
         items.Add(top11);
+                
+        //Item top12 = new Item();
+        //top12.name = "Top12";
+        //top12.image = "Top12";
+        //top12.characterIdx = 1;
+        //top12.Idx = 2;
+        //top12.buttonName = "Top";
+        //Tops.Add(top12);
+        //items.Add(top12);
 
         Item top20 = new Item();
         top20.name = "Top20";
@@ -147,6 +156,15 @@ public class ItemManager : MonoBehaviour
         hat11.buttonName = "Hat";
         Hats.Add(hat11);
         items.Add(hat11);
+        
+        //Item hat12 = new Item();
+        //hat12.name = "Hat12";
+        //hat12.image = "Hat12";
+        //hat12.characterIdx = 1;
+        //hat12.Idx = 2;
+        //hat12.buttonName = "Hat";
+        //Hats.Add(hat12);
+        //items.Add(hat12);
 
         Item hat20 = new Item();
         hat20.name = "Hat20";
@@ -219,6 +237,15 @@ public class ItemManager : MonoBehaviour
         bottom11.buttonName = "Bottom";
         Bottoms.Add(bottom11);
         items.Add(bottom11);
+        
+        //Item bottom12 = new Item();
+        //bottom12.name = "Bottom12";
+        //bottom12.image = "Bottom12";
+        //bottom12.characterIdx = 1;
+        //bottom12.Idx = 2;
+        //bottom12.buttonName = "Bottom";
+        //Bottoms.Add(bottom12);
+        //items.Add(bottom12);
 
         Item bottom20 = new Item();
         bottom20.name = "Bottom20";
@@ -291,6 +318,15 @@ public class ItemManager : MonoBehaviour
         shoes11.buttonName = "Shoes";
         Shoes.Add(shoes11);
         items.Add(shoes11);
+
+        //Item shoes12 = new Item();
+        //shoes12.name = "Shoes12";
+        //shoes12.image = "Shoes12";
+        //shoes12.characterIdx = 1;
+        //shoes12.Idx = 2;
+        //shoes12.buttonName = "Shoes";
+        //Shoes.Add(shoes12);
+        //items.Add(shoes12);
 
         Item shoes20 = new Item();
         shoes20.name = "Shoes20";

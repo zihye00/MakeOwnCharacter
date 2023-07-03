@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Vuforia;
 
 // 역할 1 : 캐릭터을 터치하면 나 자신만 활성화
@@ -38,7 +37,7 @@ public class TouchManager : MonoBehaviour
         isPressed = false;
 
 
-        
+
         UpdateInputInfo();
         Touch();
 
@@ -158,22 +157,22 @@ public class TouchManager : MonoBehaviour
                         // 2초 후 커스텀UI 나옴
                         StartCoroutine(CharacterCustom());
                     }
-  
+
                 }
 
             }
-       
-               
+
+
 
         }
     }
 
-        IEnumerator CharacterCustom()
-        {
-            yield return new WaitForSeconds(2);
-            customUI.SetActive(true);
+    IEnumerator CharacterCustom()
+    {
+        yield return new WaitForSeconds(2);
+        customUI.SetActive(true);
         saveUI.SetActive(true);
-        }
+    }
 
 
 
@@ -193,8 +192,26 @@ public class TouchManager : MonoBehaviour
         }
 
         UIManager.Instance.AddDeactiveUI();
-        // CustomUI 비활성화
         customUI.gameObject.SetActive(false);
+
+        List<GameObject> hat = CharacterIndexInit.Instance.Hat;
+        List<GameObject> top = CharacterIndexInit.Instance.Top;
+        List<GameObject> bottom = CharacterIndexInit.Instance.Bottom;
+        List<GameObject> shoe = CharacterIndexInit.Instance.Shoes;
+        for(int itemLength = 0; itemLength < 8; itemLength++)
+        {
+            hat[itemLength].gameObject.SetActive(false);
+            top[itemLength].gameObject.SetActive(false);
+            bottom[itemLength].gameObject.SetActive(false);
+            shoe[itemLength].gameObject.SetActive(false);
+        }
+
+        List<GameObject> basic = CharacterIndexInit.Instance.Basic;
+        for (int i = 0; i < 5; i++)
+        {
+            basic[i].gameObject.SetActive(true);
+        }
+        // CustomUI 비활성화
     }
 
 

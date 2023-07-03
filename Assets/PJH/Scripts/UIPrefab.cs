@@ -22,6 +22,7 @@ public class UIPrefab : MonoBehaviour
     List<GameObject> customBottom = new List<GameObject>();
     List<GameObject> customShoes = new List<GameObject>();
 
+    List<GameObject> basicRobot = new List<GameObject>();
 
     private void Start()
     {
@@ -29,12 +30,13 @@ public class UIPrefab : MonoBehaviour
         customTop = CharacterIndexInit.Instance.Top;
         customBottom = CharacterIndexInit.Instance.Bottom;
         customShoes = CharacterIndexInit.Instance.Shoes;
-
+        basicRobot = CharacterIndexInit.Instance.Basic;
     }
 
     public void OnClickUI()
     {
         buttonName = CheckIndex.Instance.bottonName;
+        characterIdx = CheckIndex.Instance.characterIndex;
 
         if (buttonName == "Hat")
         {
@@ -44,6 +46,12 @@ public class UIPrefab : MonoBehaviour
 
                 if (customHat[i].transform.name == name)
                 {
+                    if (characterIdx == 1)
+                    {
+                        basicRobot[0].gameObject.SetActive(false);
+
+                    }
+
                     customHat[i].gameObject.SetActive(true);
                 }
                 else
@@ -62,6 +70,10 @@ public class UIPrefab : MonoBehaviour
 
                 if (customTop[i].transform.name == name)
                 {
+                    if (characterIdx == 1)
+                    {
+                        basicRobot[1].gameObject.SetActive(false);
+                    }
                     customTop[i].gameObject.SetActive(true);
                 }
                 else
@@ -78,6 +90,10 @@ public class UIPrefab : MonoBehaviour
             {
                 if (customBottom[i].transform.name == name)
                 {
+                    if (characterIdx == 1)
+                    {
+                        basicRobot[2].gameObject.SetActive(false);
+                    }
                     customBottom[i].gameObject.SetActive(true);
                 }
                 else
@@ -95,6 +111,10 @@ public class UIPrefab : MonoBehaviour
             {
                 if (customShoes[i].transform.name == name)
                 {
+                    if (characterIdx == 1)
+                    {
+                        basicRobot[3].gameObject.SetActive(false);
+                    }
                     customShoes[i].gameObject.SetActive(true);
                 }
                 else
