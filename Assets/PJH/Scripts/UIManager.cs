@@ -33,16 +33,12 @@ public class UIManager : MonoBehaviour
     {
         itemUI = Resources.Load<GameObject>("Prefab/ItemUI");
 
-         InitUIObjectPooling();
+        InitUIObjectPooling();
     }
 
     // UI 생성후 비활성화
     private void InitUIObjectPooling()
     {
-        //uiPool = new List<GameObject>();
-
-        // poolsize는 캐릭터, 카테고리 정보에 따라 바뀌는 것 넣어주기
-        //deactiveUIList = new List<GameObject>();
 
         for (int i = 0; i < uiPoolSize; i++)
         {
@@ -59,13 +55,7 @@ public class UIManager : MonoBehaviour
         bottonName = CheckIndex.Instance.bottonName;
         characterIdx = CheckIndex.Instance.characterIndex;
         characterName = ItemManager.Instance.name;
-  
 
-        //deactiveUIList = new List<GameObject>();
-
-        //uiPool = new List<GameObject>();
-
-        List<Item> items = ItemManager.Instance.items;
         var tops = ItemManager.Instance.Tops;
         List<Item> hats = ItemManager.Instance.Hats;
         var bottoms = ItemManager.Instance.Bottoms;
@@ -79,6 +69,7 @@ public class UIManager : MonoBehaviour
                 var hat = hats[i];
                 if (hat.characterIdx != characterIdx)
                 {
+
                     continue;
                 }
                 GameObject uiItem = null;
@@ -104,7 +95,7 @@ public class UIManager : MonoBehaviour
                 uiItem.GetComponent<UIPrefab>().image.GetComponent<Image>().sprite = sprite;
                 //name가져오기
                 characterName = $"{bottonName}{characterIdx}{hat.Idx}";
-                uiItem.GetComponent<UIPrefab>().name = characterName;              
+                uiItem.GetComponent<UIPrefab>().name = characterName;
             }
         }
         // UI Tem 생성(다시봐보기) -> 구조이해
@@ -140,7 +131,7 @@ public class UIManager : MonoBehaviour
                 uiItem.GetComponent<UIPrefab>().image.GetComponent<Image>().sprite = sprite;
                 //name가져오기
                 characterName = $"{bottonName}{characterIdx}{top.Idx}";
-                uiItem.GetComponent<UIPrefab>().name = characterName;               
+                uiItem.GetComponent<UIPrefab>().name = characterName;
             }
         }
         // UI Tem 생성(다시봐보기) -> 구조이해
@@ -176,7 +167,7 @@ public class UIManager : MonoBehaviour
                 uiItem.GetComponent<UIPrefab>().image.GetComponent<Image>().sprite = sprite;
                 //name가져오기
                 characterName = $"{bottonName}{characterIdx}{bottom.Idx}";
-                uiItem.GetComponent<UIPrefab>().name = characterName;               
+                uiItem.GetComponent<UIPrefab>().name = characterName;
             }
         }
         // UI Tem 생성(다시봐보기) -> 구조이해
@@ -212,8 +203,22 @@ public class UIManager : MonoBehaviour
                 uiItem.GetComponent<UIPrefab>().image.GetComponent<Image>().sprite = sprite;
                 //name가져오기
                 characterName = $"{bottonName}{characterIdx}{shoe.Idx}";
-                uiItem.GetComponent<UIPrefab>().name = characterName;             
+                uiItem.GetComponent<UIPrefab>().name = characterName;
             }
+        }
+    }
+
+    public void AddDeactiveUI(GameObject uiItem)
+    {
+        if (uiPool.Count > 0)
+        {
+            for (int i = 0; i < uiPool.Count; i++)
+            {
+
+                uiItem.gameObject.SetActive(false);
+                deactiveUIList.Add(uiItem);
+            }
+
         }
     }
 }
