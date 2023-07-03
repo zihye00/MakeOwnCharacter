@@ -125,5 +125,7 @@ public class UIPrefab : MonoBehaviour
             }
         }
 
+        EffectManager.Instance.PlayParticleSystem();
+
     }
 }

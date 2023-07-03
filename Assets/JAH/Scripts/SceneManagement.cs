@@ -22,7 +22,7 @@ public class SceneManagement : MonoBehaviour
     // LobbyScene에서 Make Friend 버튼을 누르면 메인씬이동
     public void SceneLoadToMain()
     {
-        SceneManager.LoadScene("NameCamera");
+        SceneManager.LoadScene("MainScene");
     }
 
 }

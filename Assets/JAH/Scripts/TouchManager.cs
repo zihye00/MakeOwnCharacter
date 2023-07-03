@@ -169,7 +169,7 @@ public class TouchManager : MonoBehaviour
 
     IEnumerator CharacterCustom()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.7f);
         customUI.SetActive(true);
         saveUI.SetActive(true);
     }
