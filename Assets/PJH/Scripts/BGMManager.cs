@@ -14,6 +14,12 @@ public class BGMManager : MonoBehaviour
 
     public AudioSource bgm;
 
+    public AudioSource touchSound;
 
+    public void OnTouchButton()
+    {
+        touchSound.Play();
+        //touchSound.Stop();
+    }
     
 }

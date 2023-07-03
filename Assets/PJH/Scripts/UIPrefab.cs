@@ -40,6 +40,7 @@ public class UIPrefab : MonoBehaviour
 
         if (buttonName == "Hat")
         {
+            BGMManager.Instance.OnTouchButton();
 
             for (int i = 0; i < 32; i++)
             {
@@ -61,9 +62,12 @@ public class UIPrefab : MonoBehaviour
 
                 }
             }
+
+
         }
         if (buttonName == "Top")
         {
+            BGMManager.Instance.OnTouchButton();
 
             for (int i = 0; i < 32; i++)
             {
@@ -82,9 +86,12 @@ public class UIPrefab : MonoBehaviour
 
                 }
             }
+
+
         }
         if (buttonName == "Bottom")
         {
+            BGMManager.Instance.OnTouchButton();
 
             for (int i = 0; i < 32; i++)
             {
@@ -103,9 +110,12 @@ public class UIPrefab : MonoBehaviour
 
                 }
             }
+
+
         }
         if (buttonName == "Shoes")
         {
+            BGMManager.Instance.OnTouchButton();
 
             for (int i = 0; i < 32; i++)
             {
@@ -123,9 +133,10 @@ public class UIPrefab : MonoBehaviour
 
                 }
             }
+
         }
 
-        EffectManager.Instance.PlayParticleSystem();
+        //EffectManager.Instance.PlayParticleSystem();
 
     }
 }

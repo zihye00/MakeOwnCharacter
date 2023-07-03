@@ -86,6 +86,8 @@ public class TouchManager : MonoBehaviour
                     // 캐릭터1 을 터치하면
                     if (hitInfo.transform.name == "Character_1")
                     {
+                        BGMManager.Instance.OnTouchButton();
+
                         //hitInfo.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                         //cam.transform.localEulerAngles = hitInfo.transform.localEulerAngles;
 
@@ -104,6 +106,8 @@ public class TouchManager : MonoBehaviour
                     // 캐릭터2 를 터치하면
                     if (hitInfo.transform.name == "Character_2")
                     {
+                        BGMManager.Instance.OnTouchButton();
+
                         //hitInfo.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                         //cam.transform.localEulerAngles = hitInfo.transform.localEulerAngles;
 
@@ -124,6 +128,8 @@ public class TouchManager : MonoBehaviour
                     // 캐릭터3 을 터치하면
                     if (hitInfo.transform.name == "Character_3")
                     {
+                        BGMManager.Instance.OnTouchButton();
+
                         //hitInfo.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                         //cam.transform.localEulerAngles = hitInfo.transform.localEulerAngles;
 
@@ -144,6 +150,8 @@ public class TouchManager : MonoBehaviour
                     // 캐릭터4 를 터치하면
                     if (hitInfo.transform.name == "Character_4")
                     {
+                        BGMManager.Instance.OnTouchButton();
+
                         //hitInfo.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
                         //cam.transform.localEulerAngles = hitInfo.transform.localEulerAngles;
 
@@ -179,6 +187,7 @@ public class TouchManager : MonoBehaviour
     // Return 버튼을 누르면 캐릭터들 다시 생성되도록
     public void CharactersActive()
     {
+        BGMManager.Instance.OnTouchButton();
         // 캐릭터4명이 다시 뜸
         for (int cIdx = 0; cIdx < characters.Length; cIdx++)
         {
