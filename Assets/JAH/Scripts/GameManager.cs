@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("작동!  Save" + inputName.text);
         // 캐릭터 이름 값을 저장함
         PlayerPrefs.SetString("Name", inputName.text);
+        // 캐릭터 각각에 Index 번호를 부여하는 스크립트를 만든다.
+        // Index 번호를 PlayerPrefs를 통해 저장한다
+        //PlayerPrefs.SetInt("Index" )
+
+            // 각각 캐릭터 이름을 "Character + Index" 로 정하고 Resoruces 에 프리팹으로 저장
         // --> 프리팹으로 저장!
 
     }
@@ -39,7 +44,9 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("작동2!" + PlayerPrefs.GetString("Name"));
             inputName.text = PlayerPrefs.GetString("Name");
-            // ->>> 인스턴시에이트!
+            // 캐릭터의 인덱스 번호를 불러온다
+            // 인스턴시에이트!(character + index )
+         
         }
     }
 
