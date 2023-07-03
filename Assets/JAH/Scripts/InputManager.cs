@@ -9,6 +9,8 @@ public class InputManager : MonoBehaviour
 
     public void InputName()
     {
+        BGMManager.Instance.OnTouchButton();
+
         GameObject character = GameObject.FindGameObjectWithTag("Character");   
         
         // 만약 캐릭터가 활성화 되어있으면

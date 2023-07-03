@@ -10,6 +10,7 @@ public class CheckBottonIndex : MonoBehaviour
 
     public void OnClickHat()
     {
+        BGMManager.Instance.OnTouchButton();
         CheckIndex.Instance.SetBottonIndex("Hat");
         CheckIndex.Instance.SetUIFromDictionary();
         UIManager.Instance.AddDeactiveUI();
@@ -17,6 +18,7 @@ public class CheckBottonIndex : MonoBehaviour
     }
     public void OnClickTop()
     {
+        BGMManager.Instance.OnTouchButton();
         CheckIndex.Instance.SetBottonIndex("Top");
         CheckIndex.Instance.SetUIFromDictionary();
         UIManager.Instance.AddDeactiveUI();
@@ -25,6 +27,7 @@ public class CheckBottonIndex : MonoBehaviour
     }
     public void OnClickBottom()
     {
+        BGMManager.Instance.OnTouchButton();
         CheckIndex.Instance.SetBottonIndex("Bottom");
         CheckIndex.Instance.SetUIFromDictionary();
         UIManager.Instance.AddDeactiveUI();
@@ -33,6 +36,7 @@ public class CheckBottonIndex : MonoBehaviour
     }
     public void OnClickShoes()
     {
+        BGMManager.Instance.OnTouchButton();
         CheckIndex.Instance.SetBottonIndex("Shoes");
         CheckIndex.Instance.SetUIFromDictionary();
         UIManager.Instance.AddDeactiveUI();
