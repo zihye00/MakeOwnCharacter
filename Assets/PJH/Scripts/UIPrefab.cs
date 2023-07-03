@@ -29,16 +29,17 @@ public class UIPrefab : MonoBehaviour
         customTop = CharacterIndexInit.Instance.Top;
         customBottom = CharacterIndexInit.Instance.Bottom;
         customShoes = CharacterIndexInit.Instance.Shoes;
-        buttonName = CheckIndex.Instance.bottonName;
 
     }
 
     public void OnClickUI()
     {
+        buttonName = CheckIndex.Instance.bottonName;
+
         if (buttonName == "Hat")
         {
 
-            for (int i = 0; i < 34; i++)
+            for (int i = 0; i < 32; i++)
             {
 
                 if (customHat[i].transform.name == name)
@@ -56,7 +57,7 @@ public class UIPrefab : MonoBehaviour
         if (buttonName == "Top")
         {
 
-            for (int i = 0; i < 34; i++)
+            for (int i = 0; i < 32; i++)
             {
 
                 if (customTop[i].transform.name == name)
@@ -73,7 +74,7 @@ public class UIPrefab : MonoBehaviour
         if (buttonName == "Bottom")
         {
 
-            for (int i = 0; i < 34; i++)
+            for (int i = 0; i < 32; i++)
             {
                 if (customBottom[i].transform.name == name)
                 {
@@ -90,7 +91,7 @@ public class UIPrefab : MonoBehaviour
         if (buttonName == "Shoes")
         {
 
-            for (int i = 0; i < 34; i++)
+            for (int i = 0; i < 32; i++)
             {
                 if (customShoes[i].transform.name == name)
                 {

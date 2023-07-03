@@ -71,8 +71,6 @@ public class CheckIndex : MonoBehaviour
     public void SetUIFromDictionary()
     {
         characterIndex = (int)character["Character"];
-        bottonName = botton["Botton"];
-
-  
+        bottonName = botton["Botton"]; 
     }
 }

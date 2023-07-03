@@ -72,14 +72,14 @@ public class UIManager : MonoBehaviour
 
                     continue;
                 }
+
                 GameObject uiItem = null;
 
-                // uiItem이 사용 될때
                 if (deactiveUIList.Count > 0)
                 {
                     uiItem = deactiveUIList[0];
-                    uiItem.SetActive(true);
                     deactiveUIList.RemoveAt(0);
+                    uiItem.SetActive(true);
                     uiPool.Add(uiItem);
                 }
                 else
@@ -88,8 +88,9 @@ public class UIManager : MonoBehaviour
                     uiItem = Instantiate(itemUI, parent);
                     uiPool.Add(uiItem);
                 }
-                // 사용하고 다른 버튼 눌렀을때 UI deactive 하기
 
+                // uiItem
+                // UIPrefab의 정보 가져오기
 
                 Sprite sprite = Resources.Load<Sprite>($"Sprite/{bottonName}{characterIdx}{hat.Idx}");
                 uiItem.GetComponent<UIPrefab>().image.GetComponent<Image>().sprite = sprite;

@@ -1738,7 +1738,7 @@ MonoBehaviour:
   - {fileID: 241197904941563316}
   - {fileID: 8510474337195766531}
   - {fileID: 8235735961413758660}
-  - {fileID: 1061315908691483662}
+  - {fileID: 240036886428988029}
   - {fileID: 5750712539801684971}
   - {fileID: 8191228731791692280}
   - {fileID: 2198285478434546708}
@@ -3095,7 +3095,7 @@ GameObject:
   - component: {fileID: 2216181525607098971}
   - component: {fileID: 5398781848493037631}
   m_Layer: 0
-  m_Name: Shose31
+  m_Name: Shoes31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4890,7 +4890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2436174610556979945}
   m_Layer: 0
-  m_Name: Shose01
+  m_Name: Shoes01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5165,7 +5165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1085966393626336682}
   m_Layer: 0
-  m_Name: Shose00
+  m_Name: Shoes00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7122,7 +7122,7 @@ GameObject:
   - component: {fileID: 1643484428327173454}
   - component: {fileID: 2514443973573686891}
   m_Layer: 0
-  m_Name: Shose30
+  m_Name: Shoes30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7633,7 +7633,7 @@ GameObject:
   - component: {fileID: 8129663000821067848}
   - component: {fileID: 7924874888654054486}
   m_Layer: 0
-  m_Name: Shose10
+  m_Name: Shoes10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11634,7 +11634,7 @@ GameObject:
   - component: {fileID: 3960752106023204629}
   - component: {fileID: 1792849788600693518}
   m_Layer: 0
-  m_Name: Shose20
+  m_Name: Shoes20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12352,7 +12352,7 @@ GameObject:
   - component: {fileID: 2489928614289501549}
   - component: {fileID: 5596037980190592809}
   m_Layer: 0
-  m_Name: Shose11
+  m_Name: Shoes11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22746,7 +22746,7 @@ GameObject:
   - component: {fileID: 465582980875983053}
   - component: {fileID: 1941453272973851071}
   m_Layer: 0
-  m_Name: Shose21
+  m_Name: Shoes21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

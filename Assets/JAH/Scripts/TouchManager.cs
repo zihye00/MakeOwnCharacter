@@ -236,12 +236,12 @@ public class TouchManager : MonoBehaviour
                 meshes[mIdx].enabled = true;
             }
         }
-        
+
         //characters[0].gameObject.SetActive(true);
         //characters[1].gameObject.SetActive(true);
         //characters[2].gameObject.SetActive(true);
         //characters[3].gameObject.SetActive(true);
-
+        UIManager.Instance.AddDeactiveUI();
         // CustomUI 비활성화
         customUI.gameObject.SetActive(false);
     }
