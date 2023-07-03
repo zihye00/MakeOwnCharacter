@@ -22,8 +22,7 @@ public class NameEnter : MonoBehaviour
     public GameObject OnBtn;
     // - Midair인식
     public GameObject midairFinder;
-    // - 저장버튼
-    public GameObject saveBtn;
+
 
     public void NameInput()
     {
@@ -37,7 +36,5 @@ public class NameEnter : MonoBehaviour
         // Plan Finder의 앵커스테이지에서 Ground Plan Stage 제거
         MidAirPositionerBehaviour.Destroy(midairFinder);
 
-        // 역할 4 : 저장 버튼을 생성
-        saveBtn.gameObject.SetActive(true);
     }
 }
