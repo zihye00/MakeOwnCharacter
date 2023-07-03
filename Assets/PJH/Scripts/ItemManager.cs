@@ -130,26 +130,6 @@ public class ItemManager : MonoBehaviour
         Hats.Add(hat01);
         items.Add(hat01);
 
-
-        Item hat02 = new Item();
-        hat02.name = "Hat02";
-        hat02.image = "Hat02";
-        hat02.characterIdx = 0;
-        hat02.Idx = 2;
-        hat02.buttonName = "Hat";
-
-        Hats.Add(hat02);
-        items.Add(hat02);
-
-        Item hat03 = new Item();
-        hat03.name = "Hat03";
-        hat03.image = "Hat03";
-        hat03.characterIdx = 0;
-        hat03.Idx = 3;
-        hat03.buttonName = "Hat";
-        Hats.Add(hat03);
-        items.Add(hat03);
-
         Item hat10 = new Item();
         hat10.name = "Hat10";
         hat10.image = "Hat10";

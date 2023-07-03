@@ -12,12 +12,14 @@ public class CheckBottonIndex : MonoBehaviour
     {
         CheckIndex.Instance.SetBottonIndex("Hat");
         CheckIndex.Instance.SetUIFromDictionary();
+        UIManager.Instance.AddDeactiveUI();
         UIManager.Instance.MoveToUIParent();
     }
     public void OnClickTop()
     {
         CheckIndex.Instance.SetBottonIndex("Top");
         CheckIndex.Instance.SetUIFromDictionary();
+        UIManager.Instance.AddDeactiveUI();
         UIManager.Instance.MoveToUIParent();
 
     }
@@ -25,6 +27,7 @@ public class CheckBottonIndex : MonoBehaviour
     {
         CheckIndex.Instance.SetBottonIndex("Bottom");
         CheckIndex.Instance.SetUIFromDictionary();
+        UIManager.Instance.AddDeactiveUI();
         UIManager.Instance.MoveToUIParent();
 
     }
@@ -32,6 +35,7 @@ public class CheckBottonIndex : MonoBehaviour
     {
         CheckIndex.Instance.SetBottonIndex("Shoes");
         CheckIndex.Instance.SetUIFromDictionary();
+        UIManager.Instance.AddDeactiveUI();
         UIManager.Instance.MoveToUIParent();
 
 

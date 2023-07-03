@@ -484,7 +484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3472984127846977150}
   m_Layer: 0
-  m_Name: ShoseA
+  m_Name: Shose00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,7 +505,7 @@ Transform:
   - {fileID: 6929846707689891219}
   - {fileID: 7520906968830368475}
   m_Father: {fileID: 3675857351262928914}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2891453864440361593
 GameObject:
@@ -626,7 +626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2229180528038025533}
   m_Layer: 0
-  m_Name: ShoseB
+  m_Name: Shose01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -647,7 +647,7 @@ Transform:
   - {fileID: 4535573635618697154}
   - {fileID: 5582232767818716988}
   m_Father: {fileID: 3675857351262928914}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3387625296897323188
 GameObject:
@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 1531649231957837409}
   - component: {fileID: 8304398020047307902}
   m_Layer: 0
-  m_Name: BottomB
+  m_Name: Bottom01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -710,7 +710,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3675857351262928914}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &8304398020047307902
 SkinnedMeshRenderer:
@@ -821,9 +821,7 @@ Transform:
   - {fileID: 5023445740602047493}
   - {fileID: 119200483568726925}
   - {fileID: 7704019834164345683}
-  - {fileID: 4976555954610095798}
   - {fileID: 1161921423052774213}
-  - {fileID: 3612593122039364607}
   - {fileID: 5457634880626008478}
   - {fileID: 2264123173468290165}
   - {fileID: 5286929844010426068}
@@ -896,7 +894,7 @@ GameObject:
   - component: {fileID: 7704019834164345683}
   - component: {fileID: 4350918341614013187}
   m_Layer: 0
-  m_Name: HatA
+  m_Name: Hat00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -913,7 +911,8 @@ Transform:
   m_LocalPosition: {x: 2.3283064e-10, y: 0.00000023841858, z: 0.000000007450581}
   m_LocalScale: {x: 1.0029893, y: 1.0029893, z: 1.0029893}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4976555954610095798}
   m_Father: {fileID: 3675857351262928914}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1099,7 +1098,7 @@ GameObject:
   - component: {fileID: 1161921423052774213}
   - component: {fileID: 5360517176812526464}
   m_Layer: 0
-  m_Name: HatC
+  m_Name: Hat01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1116,9 +1115,10 @@ Transform:
   m_LocalPosition: {x: -0.12870063, y: 1.4553549, z: 0.4379465}
   m_LocalScale: {x: 0.9999997, y: 1.1730233, z: 1.1390748}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3612593122039364607}
   m_Father: {fileID: 3675857351262928914}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5360517176812526464
 SkinnedMeshRenderer:
@@ -1309,7 +1309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3612593122039364607
 Transform:
   m_ObjectHideFlags: 0
@@ -1317,13 +1317,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6574091980822493605}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0.006067944, y: 1.7319882, z: -0.42912668}
-  m_LocalScale: {x: 0.07559771, y: 0.11207869, z: 0.13402553}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.8670735, y: 0.10454427, z: 0.24285784}
+  m_LocalScale: {x: 0.07559773, y: 0.09554686, z: 0.11766176}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3675857351262928914}
-  m_RootOrder: 5
+  m_Father: {fileID: 1161921423052774213}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5645060689021987665
 SkinnedMeshRenderer:
@@ -1541,7 +1541,7 @@ GameObject:
   - component: {fileID: 5286929844010426068}
   - component: {fileID: 7050755916679101191}
   m_Layer: 0
-  m_Name: BottomA
+  m_Name: Bottom00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1560,7 +1560,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3675857351262928914}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &7050755916679101191
 SkinnedMeshRenderer:
@@ -1751,7 +1751,7 @@ GameObject:
   - component: {fileID: 5457634880626008478}
   - component: {fileID: 3612585856294493226}
   m_Layer: 0
-  m_Name: TopA
+  m_Name: Top00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1770,7 +1770,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3675857351262928914}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &3612585856294493226
 SkinnedMeshRenderer:
@@ -2006,7 +2006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4976555954610095798
 Transform:
   m_ObjectHideFlags: 0
@@ -2014,13 +2014,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8368791647646014953}
-  m_LocalRotation: {x: 0.638462, y: -0.6384619, z: -0.3039183, w: -0.3039183}
-  m_LocalPosition: {x: -0.022271808, y: 1.8663142, z: 0.21858317}
-  m_LocalScale: {x: 0.011753012, y: 0.055127375, z: 0.016660517}
+  m_LocalRotation: {x: 0.33454368, y: 0.00000005960465, z: -0.94238025, w: -0.00000005960465}
+  m_LocalPosition: {x: 0.21793172, y: -0.022205494, z: 1.8607516}
+  m_LocalScale: {x: 0.0117179835, y: 0.054963075, z: 0.01661086}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3675857351262928914}
-  m_RootOrder: 3
+  m_Father: {fileID: 7704019834164345683}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &870728109627318017
 SkinnedMeshRenderer:
@@ -2251,7 +2251,7 @@ GameObject:
   - component: {fileID: 2264123173468290165}
   - component: {fileID: 2257363063299779181}
   m_Layer: 0
-  m_Name: TopB
+  m_Name: Top01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2270,7 +2270,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3675857351262928914}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &2257363063299779181
 SkinnedMeshRenderer:

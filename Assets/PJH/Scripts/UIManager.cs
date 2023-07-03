@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     }
 
     private GameObject itemUI;
-    private int uiPoolSize = 4;
+    private int uiPoolSize = 2;
     [SerializeField]
 
     public List<GameObject> uiPool;
@@ -115,6 +115,7 @@ public class UIManager : MonoBehaviour
                 {
                     uiItem = deactiveUIList[0];
                     deactiveUIList.RemoveAt(0);
+                    uiItem.SetActive(true);
                     uiPool.Add(uiItem);
                 }
                 else
@@ -151,6 +152,7 @@ public class UIManager : MonoBehaviour
                 {
                     uiItem = deactiveUIList[0];
                     deactiveUIList.RemoveAt(0);
+                    uiItem.SetActive(true);
                     uiPool.Add(uiItem);
                 }
                 else
@@ -187,6 +189,7 @@ public class UIManager : MonoBehaviour
                 {
                     uiItem = deactiveUIList[0];
                     deactiveUIList.RemoveAt(0);
+                    uiItem.SetActive(true);
                     uiPool.Add(uiItem);
                 }
                 else
@@ -208,17 +211,17 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void AddDeactiveUI(GameObject uiItem)
+    public void AddDeactiveUI()
     {
+
         if (uiPool.Count > 0)
         {
             for (int i = 0; i < uiPool.Count; i++)
             {
-
+                GameObject uiItem = uiPool[i].gameObject;
                 uiItem.gameObject.SetActive(false);
                 deactiveUIList.Add(uiItem);
             }
-
         }
     }
 }
