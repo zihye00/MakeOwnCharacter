@@ -24,7 +24,7 @@ public class AnimationPlay : MonoBehaviour
 
    
 
-    private void Idle()
+    public void Idle()
     {
 
         

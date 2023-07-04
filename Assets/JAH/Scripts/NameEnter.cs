@@ -12,8 +12,8 @@ using Vuforia;
 // 역할 3 : Midair인식기를 지운다
 // - Midair인식
 
-// 역할 4 : 저장 버튼을 생성
-// - 저장버튼
+// 역할 4 : 카메라 Background 생성
+
 public class NameEnter : MonoBehaviour
 {
     // - 커스텀 UI
@@ -21,7 +21,7 @@ public class NameEnter : MonoBehaviour
     // - 카메라 On 버튼
     public GameObject OnBtn;
     // - 카메라 Background 버튼
-    //public GameManager
+    public GameObject background;
     // - Midair인식
     public GameObject midairFinder;
 
@@ -38,5 +38,7 @@ public class NameEnter : MonoBehaviour
         // Plan Finder의 앵커스테이지에서 Ground Plan Stage 제거
         MidAirPositionerBehaviour.Destroy(midairFinder);
 
+        // 역할 4 : 카메라 Background 생성
+        background.SetActive(true);
     }
 }

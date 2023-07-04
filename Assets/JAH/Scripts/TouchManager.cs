@@ -52,6 +52,7 @@ public class TouchManager : MonoBehaviour
         inputPos = Input.mousePosition;
         isPressed = Input.GetMouseButton(0);
 #else
+        if (Input.touchCount == 0) return;
         // 첫 번째 터치 정보 불러오기
         Touch touch = Input.GetTouch(0);            
         
@@ -236,33 +237,13 @@ public class TouchManager : MonoBehaviour
         }
 
         List<GameObject> basic = CharacterIndexInit.Instance.Basic;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < basic.Count; i++)
         {
             basic[i].gameObject.SetActive(true);
         }
         // CustomUI 비활성화
     }
 
-    // Return 버튼을 누르면 캐릭터들 다시 생성되도록(커스텀남아있게)
-    public void CharactersActive2()
-    {
-        BGMManager.Instance.OnTouchButton();
-        // 캐릭터4명이 다시 뜸
-        for (int cIdx = 0; cIdx < characters.Length; cIdx++)
-        {
-            characters[cIdx].gameObject.SetActive(true);
-            MeshRenderer[] meshes = characters[cIdx].GetComponentsInChildren<MeshRenderer>();
-
-            for (int mIdx = 0; mIdx < meshes.Length; mIdx++)
-            {
-                meshes[mIdx].enabled = true;
-            }
-        }
-
-        UIManager.Instance.AddDeactiveUI();
-        customUI.gameObject.SetActive(false);
-
-     
     }
-}
+
 
