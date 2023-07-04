@@ -36,4 +36,22 @@ public class InputManager : MonoBehaviour
         GameObject character = GameObject.FindGameObjectWithTag("Character");
         character.transform.Find("Canvas").gameObject.SetActive(true);
     }
+
+
+    public void ColliderOff()
+    {
+        BGMManager.Instance.OnTouchButton();
+
+        GameObject character = GameObject.FindGameObjectWithTag("Character");
+
+        // 만약 캐릭터가 활성화 되어있으면
+        if (character.activeSelf == true)
+        {
+            // 캐릭터 터치 안되도록 콜라이더 비활성화
+            character.GetComponent<BoxCollider>().enabled = false;
+  
+
+        }
+
+    }
 }
