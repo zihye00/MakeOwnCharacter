@@ -72,3 +72,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Packages/com.ptc.vuforia.engine-10.15.4.tgz
 Assets/Resources/VuforiaConfiguration.asset.meta
+Assets/PJH/UIImage/how to UI.png.meta
+Assets/PJH/UIImage/how to use UI.png.meta
+Assets/PJH/UIImage/X UI.png.meta
