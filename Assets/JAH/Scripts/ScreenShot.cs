@@ -54,7 +54,7 @@ public class ScreenShot : MonoBehaviour
     {
 #if UNITY_ANDROID
         CheckAndroidPermissionAndDo(Permission.ExternalStorageWrite, () => _willTakeScreenShot = true);
-        BGMManager.Instance.OnTouchButton();
+       
 
 #else
         _willTakeScreenShot = true;

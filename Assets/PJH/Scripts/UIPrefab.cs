@@ -54,11 +54,14 @@ public class UIPrefab : MonoBehaviour
                     }
 
                     customHat[i].gameObject.SetActive(true);
+                    EffectManager.Instance.PlayParticleSystem();
+
                 }
                 else
                 {
 
                     customHat[i].gameObject.SetActive(false);
+                    EffectManager.Instance.PlayParticleSystem();
 
                 }
             }
@@ -68,6 +71,7 @@ public class UIPrefab : MonoBehaviour
         if (buttonName == "Top")
         {
             BGMManager.Instance.OnTouchButton();
+
 
             for (int i = 0; i < 32; i++)
             {
@@ -79,10 +83,13 @@ public class UIPrefab : MonoBehaviour
                         basicRobot[1].gameObject.SetActive(false);
                     }
                     customTop[i].gameObject.SetActive(true);
+                    EffectManager.Instance.PlayParticleSystem();
+
                 }
                 else
                 {
                     customTop[i].gameObject.SetActive(false);
+                    EffectManager.Instance.PlayParticleSystem();
 
                 }
             }
@@ -93,6 +100,7 @@ public class UIPrefab : MonoBehaviour
         {
             BGMManager.Instance.OnTouchButton();
 
+
             for (int i = 0; i < 32; i++)
             {
                 if (customBottom[i].transform.name == name)
@@ -102,11 +110,14 @@ public class UIPrefab : MonoBehaviour
                         basicRobot[2].gameObject.SetActive(false);
                     }
                     customBottom[i].gameObject.SetActive(true);
+                    EffectManager.Instance.PlayParticleSystem();
+
                 }
                 else
                 {
 
                     customBottom[i].gameObject.SetActive(false);
+                    EffectManager.Instance.PlayParticleSystem();
 
                 }
             }
@@ -115,7 +126,9 @@ public class UIPrefab : MonoBehaviour
         }
         if (buttonName == "Shoes")
         {
+
             BGMManager.Instance.OnTouchButton();
+
 
             for (int i = 0; i < 32; i++)
             {
@@ -126,10 +139,13 @@ public class UIPrefab : MonoBehaviour
                         basicRobot[3].gameObject.SetActive(false);
                     }
                     customShoes[i].gameObject.SetActive(true);
+                    EffectManager.Instance.PlayParticleSystem();
+
                 }
                 else
                 {
                     customShoes[i].gameObject.SetActive(false);
+                    EffectManager.Instance.PlayParticleSystem();
 
                 }
             }

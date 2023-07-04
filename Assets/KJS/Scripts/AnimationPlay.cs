@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationPlay : MonoBehaviour
-{
-    
+{    
 
     public enum AnimeState
     {
@@ -25,7 +24,7 @@ public class AnimationPlay : MonoBehaviour
 
    
 
-    private void Idle()
+    public void Idle()
     {
 
         
