@@ -12,6 +12,8 @@ public class CameraView : MonoBehaviour
     // 카메라 화면
     public RawImage cameraViewImage;
 
+    public ParticleSystem starFilter;
+
     // 카메라 모드
     public void CameraOn()
     {
@@ -65,6 +67,10 @@ public class CameraView : MonoBehaviour
 
             // 카메라 시작
             camTexture.Play();
+
+            starFilter.Stop();
+            starFilter.Play();
+                
         }
     }
 

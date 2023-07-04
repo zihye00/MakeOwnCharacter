@@ -24,7 +24,8 @@ public class TouchManager : MonoBehaviour
     public Camera cam;
     // - Midair 인식
     public GameObject midairFinder;
-
+    // - 파티클
+    public ParticleSystem effect;
 
 
 
@@ -96,6 +97,11 @@ public class TouchManager : MonoBehaviour
                         characters[2].gameObject.SetActive(false);
                         characters[3].gameObject.SetActive(false);
 
+                        // 파티클 이펙트
+                        effect.transform.position = hitInfo.transform.position;
+                        effect.Stop();
+                        effect.Play();
+
                         CheckIndex.Instance.SetCharacterIndex(0);
 
                         // 2초 후 커스텀UI 나옴
@@ -115,6 +121,11 @@ public class TouchManager : MonoBehaviour
                         characters[0].gameObject.SetActive(false);
                         characters[2].gameObject.SetActive(false);
                         characters[3].gameObject.SetActive(false);
+
+                        // 파티클 이펙트
+                        effect.transform.position = hitInfo.transform.position;
+                        effect.Stop();
+                        effect.Play();
 
                         CheckIndex.Instance.SetCharacterIndex(1);
 
@@ -139,6 +150,11 @@ public class TouchManager : MonoBehaviour
                         characters[1].gameObject.SetActive(false);
                         characters[3].gameObject.SetActive(false);
 
+                        // 파티클 이펙트
+                        effect.transform.position = hitInfo.transform.position;
+                        effect.Stop();
+                        effect.Play();
+
                         CheckIndex.Instance.SetCharacterIndex(2);
 
 
@@ -159,6 +175,11 @@ public class TouchManager : MonoBehaviour
                         characters[0].gameObject.SetActive(false);
                         characters[1].gameObject.SetActive(false);
                         characters[2].gameObject.SetActive(false);
+
+                        // 파티클 이펙트
+                        effect.transform.position = hitInfo.transform.position;
+                        effect.Stop();
+                        effect.Play();
 
                         CheckIndex.Instance.SetCharacterIndex(3);
 
@@ -181,7 +202,6 @@ public class TouchManager : MonoBehaviour
         customUI.SetActive(true);
         saveUI.SetActive(true);
     }
-
 
 
     // Return 버튼을 누르면 캐릭터들 다시 생성되도록
