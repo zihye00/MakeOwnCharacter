@@ -221,6 +221,8 @@ public class TouchManager : MonoBehaviour
             }
         }
 
+        BGMManager.Instance.OnStartBasicMusic();
+
         UIManager.Instance.AddDeactiveUI();
         customUI.gameObject.SetActive(false);
 
