@@ -31,9 +31,9 @@ public class FollowCam : MonoBehaviour
         Quaternion rot = Quaternion.Euler(0, currYAngle, 0);
 
         // 캐릭터의 위치를 타겟 회전 각도만큼 회전 후 dist만큼 띄우고, 높이를 올리기
-        tr.position = target.position - (rot * Vector3.forward * dist) + (Vector3.up * height);
+        tr.position = target.position + (target.forward * dist) + (Vector3.up * height);
 
         // 타겟을 바라보게 하기
-        //tr.LookAt(target);
+        tr.LookAt(target);
     }
 }
