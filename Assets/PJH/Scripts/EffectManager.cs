@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,12 +10,32 @@ public class EffectManager : MonoBehaviour
         Instance = this;
     }
 
-    public ParticleSystem effect;
+    public List<ParticleSystem> effect;
 
     public void PlayParticleSystem()
     {
-        effect.Play();
-        effect.Stop();
-    }
+        int characterIdx = CheckIndex.Instance.characterIndex;
 
+
+            if (characterIdx == 0)
+            {
+
+                effect[0].Play();
+            }
+            if (characterIdx == 1)
+            {
+
+                effect[1].Play();
+            }
+            if (characterIdx == 2)
+            {
+
+                effect[2].Play();
+            }
+            if (characterIdx == 3)
+            {
+
+                effect[3].Play();
+            }
+    }
 }
