@@ -17,7 +17,7 @@ public class CameraGuide : MonoBehaviour
 
     IEnumerator CameraUI()
     {
-        BGMManager.Instance.OnStartCameraMusic();
+
         isActive = true;
         cameraui.SetActive(true);
         yield return new WaitForSeconds(2);
@@ -25,5 +25,8 @@ public class CameraGuide : MonoBehaviour
 
     }
 
-
+    public void CameraBGM()
+    {
+        BGMManager.Instance.OnStartCameraMusic();
+    }
 }
