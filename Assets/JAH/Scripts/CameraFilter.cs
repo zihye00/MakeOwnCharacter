@@ -11,4 +11,9 @@ public class CameraFilter : MonoBehaviour
         starFilter.Stop();
         starFilter.Play();
     }
+
+    public void FilterStop()
+    {
+        starFilter.Stop(); 
+    }
 }

@@ -243,6 +243,26 @@ public class TouchManager : MonoBehaviour
         // CustomUI 비활성화
     }
 
+    // Return 버튼을 누르면 캐릭터들 다시 생성되도록(커스텀남아있게)
+    public void CharactersActive2()
+    {
+        BGMManager.Instance.OnTouchButton();
+        // 캐릭터4명이 다시 뜸
+        for (int cIdx = 0; cIdx < characters.Length; cIdx++)
+        {
+            characters[cIdx].gameObject.SetActive(true);
+            MeshRenderer[] meshes = characters[cIdx].GetComponentsInChildren<MeshRenderer>();
 
+            for (int mIdx = 0; mIdx < meshes.Length; mIdx++)
+            {
+                meshes[mIdx].enabled = true;
+            }
+        }
+
+        UIManager.Instance.AddDeactiveUI();
+        customUI.gameObject.SetActive(false);
+
+     
+    }
 }
 
