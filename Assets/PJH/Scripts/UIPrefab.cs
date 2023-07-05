@@ -52,6 +52,11 @@ public class UIPrefab : MonoBehaviour
                         basicRobot[0].gameObject.SetActive(false);
 
                     }
+                    if (characterIdx == 0)
+                    {
+                        basicRobot[4].gameObject.SetActive(false);
+
+                    }
 
                     customHat[i].gameObject.SetActive(true);
                     EffectManager.Instance.PlayParticleSystem();
