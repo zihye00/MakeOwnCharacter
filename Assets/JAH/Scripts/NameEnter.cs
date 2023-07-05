@@ -20,8 +20,6 @@ public class NameEnter : MonoBehaviour
     public GameObject customUI;
     // - 카메라 On 버튼
     public GameObject OnBtn;
-    // - 카메라 Background 버튼
-    public GameObject background;
     // - Midair인식
     public GameObject midairFinder;
 
@@ -38,7 +36,6 @@ public class NameEnter : MonoBehaviour
         // Plan Finder의 앵커스테이지에서 Ground Plan Stage 제거
         MidAirPositionerBehaviour.Destroy(midairFinder);
 
-        // 역할 4 : 카메라 Background 생성
-        background.SetActive(true);
+
     }
 }
